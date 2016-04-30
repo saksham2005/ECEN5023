@@ -144,6 +144,6 @@ protected:
 }
 #else
 #error "Target is not supported. (supported targets: EFM32WG/LG/GG/TG/G STK's)"
-#endif //TARGET Check
+#endif
 
-#endif //SILABS_EFM32_CAPSENSESLIDER_H
+#endif

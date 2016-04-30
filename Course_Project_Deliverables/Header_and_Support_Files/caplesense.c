@@ -28,8 +28,6 @@
 #include "em_lesense.h"
 
 /* Capacitive sense configuration */
-//#include "caplesenseconfig.h"
-// ^^ Already included through caplesense.h ^^
 /**************************************************************************//**
  * @brief This vector stores the latest read values from LESENSE
  * @param LESENSE_CHANNELS Vector of channels.
@@ -131,11 +129,9 @@ void CAPLESENSE_setupACMP(void) {
 					.enable = false };
 
 	/* Configure ACMP locations, ACMP output to pin disabled. */
-//	ACMP_GPIOSetup(ACMP0, 0, false, false);
 	ACMP_GPIOSetup(ACMP1, 0, false, false);
 
 	/* Initialize ACMPs in capacitive sense mode. */
-//	ACMP_CapsenseInit(ACMP0, &initACMP);
 	ACMP_CapsenseInit(ACMP1, &initACMP);
 
 	/* Don't enable ACMP, LESENSE controls it! */
@@ -472,4 +468,3 @@ void CAPLESENSE_Init(bool sleep) {
 	/* Initialization done, enable interrupts globally. */
 	INT_Enable();
 }
-
